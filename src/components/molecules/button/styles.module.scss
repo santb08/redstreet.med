@@ -1,0 +1,21 @@
+@import 'colors';
+
+.button {
+  width: 220px;
+  height: 40px;
+  border-radius: 20px;
+  border-width: 0px;
+  border-style: solid;
+}
+
+.button--primary {
+  background-color: #CAA2F2;
+  color: $primary;
+}
+
+.button--secondary {
+  background-color: $primary;
+  color: $secondary;
+  border-width: 2px;
+  border-color: $secondary;
+}

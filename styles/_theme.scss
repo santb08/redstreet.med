@@ -1,0 +1,50 @@
+:root {
+  --color-primary:           #{$primary};
+  // --color-orange:            #{$warning};
+  // --color-salmon:            #{$danger};
+  // --color-white:             #{$white};
+  // --color-light:             #{$light};
+  // --color-black:             #{$black};
+  // --color-pearl:             #{$pearl};
+  // --color-night:             #{$dark};
+  // --color-carbon:            #{$carbon};
+  // --color-gray:              #{$gray};
+  // --bg-white:                #{$white};
+  // --font-primary:            'Lexend';
+  // --font-medium:             'Lexend_Medium';
+  // --font-semi-bold:          'Lexend_SemiBold';
+  // --font-bold:               'Lexend_Bold';
+  // --font-inter:              'Inter_Medium';
+}
+
+$theme-colors: (
+  "primary":     $primary,
+  "secondary":   $secondary,
+  // "success":     $success,
+  // "info":        $info,
+  // "warning":     $warning,
+  // "danger":      $danger,
+  // "light":       $light,
+  // "dark":        $dark,
+  // "white":       $white,
+  // "punch-green": $success,
+  // "mint":        $primary,
+  // "aqua":        $secondary,
+  // "ultra-aqua":  $info,
+  // "orange":      $warning,
+  // "salmon":      $danger,
+  // "pearl":       $white,
+  // "background-2":$light,
+  // "night":       $dark,
+  // "carbon":      $carbon,
+  // "lunar-gray":  $lunar-gray,
+);
+
+@each $name, $color in $theme-colors {
+  .#{'' + $name}-bg {
+    background: $color;
+  }
+  .#{'' + $name} {
+    color: $color;
+  }
+}

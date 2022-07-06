@@ -7,7 +7,7 @@ const client = new ApolloClient({
 
 const GET_IMAGES = gql`
   {
-    mediaItems(where: {nameIn: ["DSC07342", "DSC07333"]}) {
+    mediaItems(where: {nameIn: ["DSC07342", "DSC07333", "DSC0017", "DSC0024"]}) {
       nodes {
         id
         authorId

@@ -16,7 +16,7 @@ const ImageCarousel = ({
   useEffect(() => {
     const changeImage = setTimeout(() => {
       setBackgroundImage((backgroundImage + 1) % images.length);
-    }, 2000);
+    }, 5000);
 
     return () => {
       clearTimeout(changeImage);

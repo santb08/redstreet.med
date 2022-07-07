@@ -1,0 +1,17 @@
+.galleryContainer {
+  display: grid;
+  overflow-y: visible;
+  height: min-content;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  list-style: none;
+
+  li {
+    height: fit-content;
+  }
+
+  img {
+    object-fit: cover;
+    width: 100%;
+  }
+}

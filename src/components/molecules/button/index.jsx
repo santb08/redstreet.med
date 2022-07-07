@@ -16,6 +16,7 @@ const Button = ({
   href,
   onClick,
   variant,
+  newTab,
 }) => {
   const props = {
     className: `${styles.button} ${mapVariantToClass(variant)} ${mapVariantToClass('link')} ${className}`,
@@ -24,7 +25,10 @@ const Button = ({
   if (href) {
     return (
       <Link href={href}>
-        <a {...props} target="_blank">
+        <a
+          {...props}
+          target={newTab ? "_blank" : ''}
+        >
           {children}
         </a>
       </Link>
@@ -47,11 +51,13 @@ Button.propTypes = {
   href: PropTypes.string,
   onClick: PropTypes.func,
   variant: PropTypes.oneOf(['primary', 'secondary']),
+  newTab: PropTypes.bool,
 }
 
 Button.defaultProps = {
   onClick: Function.prototype,
   variant: 'primary',
+  newTab: false,
 }
 
 export default Button;

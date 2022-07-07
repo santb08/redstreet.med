@@ -31,3 +31,37 @@ export const getImages = async () => {
   });
   return data.mediaItems.nodes;
 };
+
+export const getCollections = async () => {
+  const GET_COLLECTION = gql`
+    {
+      contentNodes(where: {contentTypes: POST}) {
+        nodes {
+          ... on NodeWithTitle {
+            collectionName: title
+          }
+          attachedMedia {
+            nodes {
+              imageUrl: sourceUrl
+              mediaType
+            }
+          }
+          ... on Post {
+            featuredImage {
+              data: node {
+                alt: altText
+                imageUrl: sourceUrl
+              }
+            }
+          }
+        }
+      }
+    }
+  `;
+
+  const { data } = await client.query({
+    query: GET_COLLECTION,
+  });
+
+  return data.contentNodes.nodes;
+}

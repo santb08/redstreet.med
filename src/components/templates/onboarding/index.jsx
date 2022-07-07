@@ -1,18 +1,22 @@
-import Image from 'next/image';
-import { useEffect, useMemo, useState } from 'react';
 import ImageCarousel from '../../organisms/image-carousel';
 import Divider from '../../atoms/divider';
 import Button from '../../molecules/button';
 import styles from './styles.module.scss';
+
+const CALENDLY_URL = 'https://calendly.com/redstreetmed/30min';
 
 const OnBoardingTemplate = ({ images }) => (
   <div className={`${styles.container} primary-bg`}>
     <ImageCarousel images={images} className={styles.imageCarousel}/>
     <Divider />
     <div className={styles.content}>
-      <h1>redstreet.med</h1>
+      <h1 className={styles.title}>
+        redstreet.med
+      </h1>
       <div className={styles.buttonsGroup}>
-        <Button>BOOK A SESSION</Button>
+        <Button href={CALENDLY_URL}>
+          BOOK A SESSION
+        </Button>
         <Button variant="secondary">EXPLORE</Button>
       </div>
     </div>

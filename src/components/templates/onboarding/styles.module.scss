@@ -1,3 +1,5 @@
+@import 'fonts';
+
 .container {}
 
 .imageCarousel {
@@ -13,13 +15,18 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100%;
   width: 100%;
-  padding: 0;
-  margin: 0;
   position: absolute;
-  top: 0;
-  bottom: 0;
+  top: 0px;
+  bottom: 5rem;
+}
+
+.title {
+  font-size: 5rem;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 1rem;
+  font-family: 'Electroharmonix';
 }
 
 .buttonsGroup {

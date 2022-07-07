@@ -8,6 +8,7 @@ const nextConfig = {
   images: {
     domains: ['redstreetmed.com']
   },
+  optimizeFonts: true,
   headers: async () => [{
     // matching all API routes
     source: "/graphql",

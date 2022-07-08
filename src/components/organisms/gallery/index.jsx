@@ -4,22 +4,11 @@ const Gallery = ({
   images,
   columns,
 }) => {
-  const mockImages = [
-    ...images,
-    ...images,
-    ...images,
-    ...images,
-    ...images,
-    ...images,
-    ...images,
-    ...images,
-  ];
-
   const columnsArray = Array.from({
     length: columns,
   }, () => []);
 
-  mockImages.forEach((image, index) => {
+  images.forEach((image, index) => {
     columnsArray[index % columns].push(image);
   });
 

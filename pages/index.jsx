@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { getImages } from 'graphql/images';
+import { getImages } from '@graphql/images';
 import OnBoardingTemplate from '../src/components/templates/onboarding';
 
 const Home = ({

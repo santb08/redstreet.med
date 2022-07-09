@@ -3,7 +3,7 @@
     "baseUrl": ".",
     "paths": {
       "styles/*": ["styles/*"],
-      "graphql/*": ["graphql/*"],
+      "@graphql/*": ["graphql/*"],
     }
   }
 }

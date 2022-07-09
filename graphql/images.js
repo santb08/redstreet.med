@@ -37,6 +37,7 @@ export const getCollections = async () => {
     {
       contentNodes(where: {contentTypes: POST}) {
         nodes {
+          id: databaseId
           ... on NodeWithTitle {
             collectionName: title
           }
@@ -59,9 +60,53 @@ export const getCollections = async () => {
     }
   `;
 
+
   const { data } = await client.query({
     query: GET_COLLECTION,
   });
 
   return data.contentNodes.nodes;
 }
+
+export const getCollectionsPaths = async () => {
+  const GET_COLLECTION = gql`
+    {
+      contentNodes(where: {contentTypes: POST}) {
+        nodes {
+          id: databaseId
+        }
+      }
+    }
+  `;
+
+  const { data } = await client.query({
+    query: GET_COLLECTION,
+  });
+
+  return data.contentNodes.nodes.map(node => String(node.id));
+}
+
+export const getCollection = async (collectionId) => {
+  const GET_COLLECTION = gql`
+    {
+      post(id: ${collectionId}, idType: DATABASE_ID) {
+        date
+        id
+        title
+        attachedMedia {
+          nodes {
+            id
+            title
+            url: mediaItemUrl
+          }
+        }
+      }
+    }
+  `;
+
+  const { data } = await client.query({
+    query: GET_COLLECTION,
+  });
+
+  return data.post;
+};

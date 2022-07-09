@@ -1,8 +1,9 @@
-import { getCollections } from 'graphql/images';
+import { getCollections } from '@graphql/images';
 import Gallery from '../src/components/organisms/gallery';
 import DefaultTemplate from '../src/components/templates/default';
 
 const mapCollectionsToPreviews = (collections = []) => collections.map(collection => ({
+  id: collection.id,
   url: collection.featuredImage.data.imageUrl,
   alt: collection.featuredImage.data.alt,
 }));

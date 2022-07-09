@@ -10,7 +10,7 @@ const CollectionPage = ({
       <h2 className="title">{collection.title}</h2>
       <div className="items">
         {images.map(image => (
-          <img src={image.url} alt={image.alt}></img>
+          <img src={image.url} alt={image.alt} key={image.id} />
         ))}
       </div>
     </DefaultTemplate>

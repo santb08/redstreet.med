@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { getImages } from '@graphql/images';
+import { getImages } from 'web3/opensea';
 import OnBoardingTemplate from '../src/components/templates/onboarding';
 
 const Home = ({
@@ -16,7 +16,7 @@ const Home = ({
 
 export async function getStaticProps() {
   const images = await getImages();
-
+  console.log(images)
   return {
     props: {
       images,

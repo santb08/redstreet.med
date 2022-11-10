@@ -20,3 +20,9 @@ export const imagesAdapter = (data)=>{
   })
   return imagesInfo
 }
+
+export const mapCollectionsToPreviews = (collections = []) => collections.map(collection => ({
+  id: collection.slug,
+  url: collection.image_url,
+  alt: collection.name,
+}));

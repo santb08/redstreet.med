@@ -16,8 +16,13 @@ export const getImages = async () => {
 
 export const imagesAdapter = (data)=>{
   const imagesInfo = data.assets.map(x=> {
-    console.log(x)
     return {url:x.image_url,alt:x.name}
   })
   return imagesInfo
 }
+
+export const mapCollectionsToPreviews = (collections = []) => collections.map(collection => ({
+  id: collection.slug,
+  url: collection.image_url,
+  alt: collection.name,
+}));

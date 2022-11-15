@@ -13,7 +13,6 @@ export const getImages = async () => {
     return [];
   }
 };
-
 export const imagesAdapter = (data)=>{
   const imagesInfo = data.assets.map(x=> {
     return {url:x.image_url,alt:x.name}

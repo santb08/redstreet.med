@@ -1,0 +1,2 @@
+AUTHOR_ADDRESS = "0x6e4AE7C8d14F93382A92543aa2113c6F18C9F9aa"
+OPENSEA_API_URL = "https://api.opensea.io/api/v1/"
